@@ -5,7 +5,8 @@ window.wm = {
 	info: null,
 	current: null,
 	url: "http://localhost:8080/",
-	path: "workmate/workplaces/"
+	path: "workmate/workplaces/",
+	sites: []
 };
 
 
@@ -45,7 +46,7 @@ function initCanvas() {
   return mapcanvas;
 }
 
-function addMarker(lat, lon) {
+function addMarker(lat, lon, callback) {
 	var position = new google.maps.LatLng(lat, lon);
 	var marker = new google.maps.Marker({
 		position: position, 
@@ -54,13 +55,21 @@ function addMarker(lat, lon) {
 
 	wm.markers.push(marker);
 
-	google.maps.event.addListener(marker, 'click', function(p) {
-		wm.info.setContent("Profile info");
-		wm.info.open(map, marker);
-	});
+	google.maps.event.addListener(marker, 'click', callback(marker));
 
 	return marker;
 }
+
+function addSites() {
+	wm.sites.forEach(function(site) {
+		addMarker(site.location.y, site.location.x, function (marker) {
+			wm.info.setContent(site.employees.map(function(e) { return [e.name, e.surname, e.project].join(" "); }).join("<br />"))
+			wm.info.open(wm.map, marker);
+		});
+	});
+
+}
+
 
 function initMap(initialPosition) {
 	initialPosition = new google.maps.LatLng(52.387916999999995, 4.6336751);
@@ -77,16 +86,14 @@ function initMap(initialPosition) {
 	return map;
 }
 
-function addMates() {
+function requestMates() {
 	if (wm.current) {
 		getCoordinates(wm.current.coords.latitude, wm.current.coords.longitude, function(p) {
-			console.log(p.srcElement.responseText);
+			var sites = JSON.parse(p.srcElement.responseText);
+			wm.sites = sites;
+			addSites();
 		});
 	}
-}
-
-function addCurrentLocation() {
-  addMarker(wm.current.coords.latitude, wm.current.coords.longitude);
 }
 
 
