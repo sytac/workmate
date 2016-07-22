@@ -38,7 +38,7 @@ public class LocationController {
 		
 		logger.info("Get received for coordinates: "+x+" "+y);
 		
-		Circle circle = new Circle(new Point(x, y), new Distance(2, Metrics.MILES));
+		Circle circle = new Circle(new Point(x, y), new Distance(1, Metrics.KILOMETERS));
 		
 		List<Workplace> workplaces = repository.findByLocationWithin(circle);
 		

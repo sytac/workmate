@@ -3,7 +3,7 @@
     "_class":"com.sytac.workmate.model.Workplace",
     "id":"w00001",
     "name":"Sytac",
-    "location" : { "latitude":40.743827, "longitude":-73.989015 },
+    "location" : { "latitude":52.3879374, "longitude":4.6316463 },
     "employees" : [
     	{
     	    "_class":"com.sytac.workmate.model.Employee",
@@ -32,6 +32,6 @@
     "_class":"com.sytac.workmate.model.Workplace",
     "id":"w00002",
     "name":"KLM",
-    "location" : { "latitude":10.743827, "longitude":-20.989015 }
+    "location" : { "latitude":52.2955577, "longitude":4.7432032 }
   }
 ]
