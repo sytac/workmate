@@ -1,0 +1,14 @@
+[
+  {
+    "_class":"com.sytac.workmate.model.Workplace",
+    "id":"00001",
+    "name":"Sytac",
+    "location" : { "latitude":40.743827, "longitude":-73.989015 }
+  },
+  {
+    "_class":"com.sytac.workmate.model.Workplace",
+    "id":"00002",
+    "name":"KLM",
+    "location" : { "latitude":40.743827, "longitude":-73.989015 }
+  }
+]
