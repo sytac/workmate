@@ -12,7 +12,7 @@ public class Workplace {
 	
 	private String name;
 	
-	public GeoJsonPoint location;
+	private GeoJsonPoint location;
 
 	public String getId() {
 		return id;
