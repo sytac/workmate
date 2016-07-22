@@ -1,14 +1,37 @@
 [
   {
     "_class":"com.sytac.workmate.model.Workplace",
-    "id":"00001",
+    "id":"w00001",
     "name":"Sytac",
-    "location" : { "latitude":40.743827, "longitude":-73.989015 }
+    "location" : { "latitude":40.743827, "longitude":-73.989015 },
+    "employees" : [
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00001",
+	    	"name":"Alessandro",
+	    	"surname":"Valcepina",
+	    	"project":"whatever"
+    	},
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00001",
+	    	"name":"Efstathios",
+	    	"surname":"Stergou",
+	    	"project":"whatever"
+    	},    	
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00002",
+	    	"name":"just",
+	    	"surname":"a guy",
+	    	"project":"nothing special"
+    	}
+    ]
   },
   {
     "_class":"com.sytac.workmate.model.Workplace",
-    "id":"00002",
+    "id":"w00002",
     "name":"KLM",
-    "location" : { "latitude":40.743827, "longitude":-73.989015 }
+    "location" : { "latitude":10.743827, "longitude":-20.989015 }
   }
 ]
