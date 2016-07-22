@@ -33,10 +33,10 @@ public class LocationController {
 	}
 	
 	
-	@RequestMapping(path = "/location/{x}/{y}", method = RequestMethod.GET)
+	@RequestMapping(path = "workplaces/{x}/{y}/", method = RequestMethod.GET)
 	public @ResponseBody List<Workplace> getLocationByCoordinates(@PathVariable double x, @PathVariable double y) {
 		
-		logger.info("Get received");
+		logger.info("Get received for coordinates: "+x+" "+y);
 		
 		Circle circle = new Circle(new Point(x, y), new Distance(2, Metrics.MILES));
 		
