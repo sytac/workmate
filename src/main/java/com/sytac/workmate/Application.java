@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
@@ -14,12 +15,14 @@ import org.springframework.data.repository.init.Jackson2RepositoryPopulatorFacto
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sytac.config.controller.LocationController;
 
 /**
  * The Class Application.
  */
 @SpringBootApplication
 @EnableAutoConfiguration
+@ComponentScan(basePackageClasses = LocationController.class)
 public class Application {
 	
 	@Bean
