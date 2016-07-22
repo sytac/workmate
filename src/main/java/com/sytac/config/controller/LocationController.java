@@ -34,7 +34,7 @@ public class LocationController {
 	
 	
 	@RequestMapping(path = "/location/{x}/{y}", method = RequestMethod.GET)
-	public @ResponseBody List<Workplace> getLocationByCoordinates(@PathVariable int x, @PathVariable int y) {
+	public @ResponseBody List<Workplace> getLocationByCoordinates(@PathVariable double x, @PathVariable double y) {
 		
 		logger.info("Get received");
 		
