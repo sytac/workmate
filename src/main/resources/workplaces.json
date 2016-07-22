@@ -1,58 +1,37 @@
 [
-	{
-	  "_class":"com.sytac.workmate.model.Workplace",
-	  "id":"w00001",
-	  "name":"Sytac",
-	  "location" : { "latitude":52.38791, "longitude":4.63378 },
-	  "employees" : [
-		{
-			"_class":"com.sytac.workmate.model.Employee",
-				"id":"e00001",
-				"name":"Alessandro",
-				"surname":"Valcepina",
-				"project":"whatever"
-		},
-		{
-			"_class":"com.sytac.workmate.model.Employee",
-				"id":"e00002",
-				"name":"Efstathios",
-				"surname":"Stergou",
-				"project":"whatever"
-		},    	
-		{
-			"_class":"com.sytac.workmate.model.Employee",
-				"id":"e00003",
-				"name":"just",
-				"surname":"a guy",
-				"project":"nothing special"
-		}
-	  ]
-	},
-	{
-	  "_class":"com.sytac.workmate.model.Workplace",
-	  "id":"w00002",
-	  "name":"KLM",
-	  "location" : { "latitude":52.2955577, "longitude":4.7432032 }
-	},
-	{
-	    "_class":"com.sytac.workmate.model.Employee",
-		"id":"e00001",
-		"name":"Alessandro",
-		"surname":"Valcepina",
-		"project":"whatever"
-	},
-	{
-	    "_class":"com.sytac.workmate.model.Employee",
-		"id":"e00002",
-		"name":"Efstathios",
-		"surname":"Stergou",
-		"project":"whatever"
-	},    	
-	{
-	    "_class":"com.sytac.workmate.model.Employee",
-		"id":"e00003",
-		"name":"just",
-		"surname":"a guy",
-		"project":"nothing special"
-	}
+  {
+    "_class":"com.sytac.workmate.model.Workplace",
+    "id":"w00001",
+    "name":"Sytac",
+    "location" : { "latitude":52.3879374, "longitude":4.6316463 },
+    "employees" : [
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00001",
+	    	"name":"Alessandro",
+	    	"surname":"Valcepina",
+	    	"project":"whatever"
+    	},
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00001",
+	    	"name":"Efstathios",
+	    	"surname":"Stergou",
+	    	"project":"whatever"
+    	},    	
+    	{
+    	    "_class":"com.sytac.workmate.model.Employee",
+	    	"id":"e00002",
+	    	"name":"just",
+	    	"surname":"a guy",
+	    	"project":"nothing special"
+    	}
+    ]
+  },
+  {
+    "_class":"com.sytac.workmate.model.Workplace",
+    "id":"w00002",
+    "name":"KLM",
+    "location" : { "latitude":52.2955577, "longitude":4.7432032 }
+  }
 ]

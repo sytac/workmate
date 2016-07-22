@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sytac.workmate.model.Employee;
 import com.sytac.workmate.model.Workplace;
-import com.sytac.workmate.repository.EmployeeRepository;
 import com.sytac.workmate.repository.WorkplaceRepository;
 
 @RestController
@@ -27,10 +25,7 @@ public class LocationController {
 	private static Logger logger = Logger.getLogger(LocationController.class);
 	
 	@Autowired
-	private WorkplaceRepository workplaceRepository;
-	
-	@Autowired
-	private EmployeeRepository employeeRepository;
+	private WorkplaceRepository repository;
 	
 	@RequestMapping(path = "/active", method = RequestMethod.GET)
 	public String isActive() {
@@ -43,34 +38,12 @@ public class LocationController {
 		
 		logger.info("Get received for coordinates: "+x+" "+y);
 		
-		Circle circle = new Circle(new Point(x, y), new Distance(0.5, Metrics.KILOMETERS));
+		Circle circle = new Circle(new Point(x, y), new Distance(1, Metrics.KILOMETERS));
 		
-		List<Workplace> workplaces = workplaceRepository.findByLocationWithin(circle);
+		List<Workplace> workplaces = repository.findByLocationWithin(circle);
 		
 		return workplaces;
 		
 	}
-	
-//	@RequestMapping(path = "workplaces/{x}/{y}/{id}", method = RequestMethod.PUT)
-//	public @ResponseBody List<Workplace> updateByCoordinates(@PathVariable double x, @PathVariable double y, @PathVariable String id) {
-//		
-//		logger.info("Get received for coordinates: "+x+" "+y);
-//		
-//		Circle circle = new Circle(new Point(x, y), new Distance(1, Metrics.KILOMETERS));
-//		
-//		List<Workplace> workplaces = workplaceRepository.findByLocationWithin(circle);
-//		
-//		Employee employee = employeeRepository.findOne(id);
-//		
-//		for (Workplace workplace : workplaces)  {
-//			if (!workplace.getEmployees().contains(employee)) {
-//				workplace.getEmployees().add(employee);
-//				workplaceRepository.save(workplace);
-//			}
-//		}
-//		
-//		return workplaces;
-//		
-//	}
 	
 }
